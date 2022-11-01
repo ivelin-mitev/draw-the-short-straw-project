@@ -7,16 +7,19 @@
 
   </header>
 
-  <InputField title='Write down your question' placeholderValue="Who's buying beer tonight?" :widthValue="`${400}`"/>
-  <InputField title='Enter your name' placeholderValue="Name" :widthValue="`${300}`"/>
+  <InputField title='Write down your question' placeholderValue="Who's buying beer tonight?" :widthValue="Number(400)"/>
+  <InputField title='Enter your name' placeholderValue="Name" :widthValue="Number(300)"/>
+  <ButtonVue text="PLAY"/>
 </template>
 
 <script>
 import InputField from '@/components/InputField.vue';
+import ButtonVue from './ButtonVue.vue';
 
 export default {
   components: {
-    InputField
+    InputField,
+    ButtonVue
   },
 
   data() {
