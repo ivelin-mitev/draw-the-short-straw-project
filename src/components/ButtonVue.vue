@@ -1,5 +1,5 @@
 <template>
-        <button type="button"><slot></slot>{{text}}</button>
+        <button class="btn-primary" type="button"><slot></slot>{{text}}</button>
 </template>
 
 <script>
@@ -18,5 +18,4 @@ export default {
 </script>
 
 <style>
-
 </style>
