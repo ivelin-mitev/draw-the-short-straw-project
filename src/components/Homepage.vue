@@ -12,18 +12,23 @@
   <ButtonVue text="PLAY">
     <IconPlay />
   </ButtonVue>
+  <ButtonVue text="Copy URL link">
+    <IconLinkChain />
+  </ButtonVue>
 </template>
 
 <script>
 import InputField from '@/components/InputField.vue';
 import ButtonVue from './ButtonVue.vue';
 import IconPlay from './icons/IconPlay.vue';
+import IconLinkChain from './icons/IconLinkChain.vue'
 
 export default {
   components: {
     InputField,
     ButtonVue,
-    IconPlay
+    IconPlay,
+    IconLinkChain
   },
 
   data() {

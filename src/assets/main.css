@@ -54,6 +54,7 @@ input:focus {
 
   align-self: center;
 
+  margin-bottom: 2rem;
   padding: 0px 12px;
 
   will-change: transform;

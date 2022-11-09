@@ -1,0 +1,34 @@
+<template>
+    <svg :width="width" :height="height" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M24.8307 19.1693C23.329 17.6683 21.2926 16.825 19.1693 16.825C17.0461 16.825 15.0097 17.6683 13.508 19.1693L7.84483 24.8307C6.34311 26.3324 5.49945 28.3692 5.49945 30.4929C5.49945 32.6167 6.34311 34.6534 7.84483 36.1552C9.34655 37.6569 11.3833 38.5005 13.5071 38.5005C15.6308 38.5005 17.6676 37.6569 19.1693 36.1552L22 33.3245"
+            :stroke="iconColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+            d="M19.1693 24.8307C20.671 26.3317 22.7074 27.175 24.8307 27.175C26.9539 27.175 28.9903 26.3317 30.492 24.8307L36.1552 19.1693C37.6569 17.6676 38.5005 15.6308 38.5005 13.5071C38.5005 11.3833 37.6569 9.34655 36.1552 7.84483C34.6534 6.34311 32.6167 5.49945 30.4929 5.49945C28.3692 5.49945 26.3324 6.34311 24.8307 7.84483L22 10.6755"
+            :stroke="iconColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+</template>
+
+<script>
+export default {
+    props: {
+        iconName: {
+            type: String,
+            default: 'box'
+        },
+        width: {
+            type: [Number, String],
+            default: 18
+        },
+        height: {
+            type: [Number, String],
+            default: 18
+        },
+        iconColor: {
+            type: String,
+            default: 'white'
+        }
+    }
+}
+</script>
