@@ -9,17 +9,21 @@
 
   <InputField title='Write down your question' placeholderValue="Who's buying beer tonight?" :widthValue="Number(400)"/>
   <InputField title='Enter your name' placeholderValue="Name" :widthValue="Number(300)"/>
-  <ButtonVue text="PLAY"/>
+  <ButtonVue text="PLAY">
+    <IconPlay />
+  </ButtonVue>
 </template>
 
 <script>
 import InputField from '@/components/InputField.vue';
 import ButtonVue from './ButtonVue.vue';
+import IconPlay from './icons/IconPlay.vue';
 
 export default {
   components: {
     InputField,
-    ButtonVue
+    ButtonVue,
+    IconPlay
   },
 
   data() {

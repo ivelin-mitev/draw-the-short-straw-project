@@ -1,5 +1,7 @@
 <template>
-        <button class="btn-primary" type="button"><slot></slot>{{text}}</button>
+    <button class="btn-primary btn-pushable" type="button">
+        <slot></slot><span class="btn-front">{{ text }}</span>
+    </button>
 </template>
 
 <script>
@@ -18,4 +20,12 @@ export default {
 </script>
 
 <style>
+button {
+    display: flex;
+    align-items: baseline;
+}
+
+svg {
+    margin-right: 6px;
+}
 </style>
