@@ -10,11 +10,11 @@
   <InputField v-model="question" title='Write down your question' placeholderValue="Who's buying beer tonight?"
     :widthValue="Number(400)" />
   <InputField v-model="roomCreatorName" title='Enter your name' placeholderValue="Name" :widthValue="Number(300)" />
-  <ButtonVue text="PLAY">
+  <ButtonVue @click="startGame" text="PLAY">
     <IconPlay />
   </ButtonVue>
-  <ButtonVue text="Copy URL link">
-    <IconLinkChain />
+  <ButtonVue @click="copyURL" text="Copy URL link" :showBadge="showBadge">
+    <IconLinkChain width="22" height="22"/>
   </ButtonVue>
 </template>
 
@@ -35,18 +35,35 @@ export default {
   data() {
     return {
       question: '',
-      roomCreatorName: ''
+      roomCreatorName: '',
+      showBadge: false
     }
   },
 
   watch: {
-    question(){
+    question() {
       console.log(this.question);
     }
   },
 
   methods: {
-
+    startGame() {
+      console.log('Game started');
+    },
+    async copyURL() {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        this.toggleBadge();
+      } catch ($e) {
+        alert('Cannot copy');
+      }
+    },
+    toggleBadge() {
+      this.showBadge = true;
+      setTimeout(() => {
+        this.showBadge = false;
+      }, 1000);
+    }
   },
   mounted() {
 

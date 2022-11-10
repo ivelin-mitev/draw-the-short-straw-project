@@ -43,6 +43,10 @@ input:focus {
   font-size: 24px;
 }
 
+.btn-primary svg {
+  margin-right: 6px;
+}
+
 .btn-primary {
   background-color: var(--my-green-ish);
   border-color: var( --my-green-ish);

@@ -1,7 +1,10 @@
 <template>
-    <button class="btn-primary btn-pushable" type="button">
-        <slot></slot><span class="btn-front">{{ text }}</span>
-    </button>
+    <div>
+        <button class="btn-primary btn-pushable" type="button">
+            <slot></slot><span class="btn-front">{{ text }}</span>
+        </button>
+        <span v-if="showBadge" class="badge bg-secondary">Link copied to clipboard!</span>
+    </div>
 </template>
 
 <script>
@@ -11,6 +14,9 @@ export default {
         text: {
             type: String,
             required: true
+        },
+        showBadge: {
+            type: Boolean
         }
     },
     methods: {
@@ -19,13 +25,20 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 button {
     display: flex;
     align-items: baseline;
 }
 
-svg {
-    margin-right: 6px;
+div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.badge {
+    bottom: 32px;
+    flex-shrink: 1;
 }
 </style>
