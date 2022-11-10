@@ -7,8 +7,9 @@
 
   </header>
 
-  <InputField title='Write down your question' placeholderValue="Who's buying beer tonight?" :widthValue="Number(400)"/>
-  <InputField title='Enter your name' placeholderValue="Name" :widthValue="Number(300)"/>
+  <InputField v-model="question" title='Write down your question' placeholderValue="Who's buying beer tonight?"
+    :widthValue="Number(400)" />
+  <InputField v-model="roomCreatorName" title='Enter your name' placeholderValue="Name" :widthValue="Number(300)" />
   <ButtonVue text="PLAY">
     <IconPlay />
   </ButtonVue>
@@ -33,6 +34,14 @@ export default {
 
   data() {
     return {
+      question: '',
+      roomCreatorName: ''
+    }
+  },
+
+  watch: {
+    question(){
+      console.log(this.question);
     }
   },
 

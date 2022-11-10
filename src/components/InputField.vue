@@ -1,7 +1,11 @@
 <template>
     <div>
         <h2 v-if="title">{{ title }}</h2>
-        <input :style="{width: widthValue + 'px' }" v-model="text" :placeholder="placeholderValue" />
+        <input 
+            :style="{ width: widthValue + 'px' }" 
+            :value="modelValue" 
+            @input="$emit('update:modelValue', $event.target.value)"
+            :placeholder="placeholderValue" />
     </div>
 </template>
 
@@ -17,19 +21,13 @@ export default {
         widthValue: {
             type: Number,
             default: 200
-        }
-    },
-
-    data() {
-        return {
-            text: ''
+        },
+        modelValue: {
+            type: String
         }
     },
     methods: {
 
-    },
-    mounted() {
-        console.log(this.widthValue)
     }
 }
 </script>
