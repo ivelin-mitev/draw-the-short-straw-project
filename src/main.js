@@ -1,13 +1,16 @@
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/js/bootstrap.js'
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
 
-import './assets/main.css'
+import VueSocketIO from "vue-socket.io";
+import SocketIO from "socket.io-client";
 
-const app = createApp(App)
+import "./assets/main.css";
 
-app.use(router)
+const app = createApp(App);
 
-app.mount('#app')
+app.use(router);
+
+app.mount("#app");

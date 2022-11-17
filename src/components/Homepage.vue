@@ -23,6 +23,8 @@ import InputField from '@/components/InputField.vue';
 import ButtonVue from './ButtonVue.vue';
 import IconPlay from './icons/IconPlay.vue';
 import IconLinkChain from './icons/IconLinkChain.vue'
+import io from 'socket.io-client';
+import VueSocketIO from 'vue-socket.io'
 
 export default {
   components: {
@@ -36,7 +38,11 @@ export default {
     return {
       question: '',
       roomCreatorName: '',
-      showBadge: false
+      showBadge: false,
+      socket: new VueSocketIO({
+        debug: true,
+        connection: 'http://localhost:3000'
+      })
     }
   },
 
@@ -47,8 +53,8 @@ export default {
   },
 
   methods: {
-    startGame() {
-      console.log('Game started');
+    async startGame() {
+      console.log(this.socket.io.id);
     },
     async copyURL() {
       try {
