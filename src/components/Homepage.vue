@@ -7,7 +7,7 @@
 
   </header>
 
-  <InputField v-model="question" title='Write down your question' placeholderValue="Who's buying beer tonight?"
+  <InputField @vueinput="updateQuestion" :modelValue="question" title='Write down your question' placeholderValue="Who's buying beer tonight?"
     :widthValue="Number(400)" />
   <InputField v-model="roomCreatorName" title='Enter your name' placeholderValue="Name" :widthValue="Number(300)" />
   <ButtonVue @click="startGame" text="PLAY">
@@ -25,6 +25,7 @@ import IconPlay from './icons/IconPlay.vue';
 import IconLinkChain from './icons/IconLinkChain.vue'
 import io from 'socket.io-client';
 import VueSocketIO from 'vue-socket.io'
+import { mapState, mapGetters, mapActions } from 'vuex'
 
 export default {
   components: {
@@ -36,7 +37,6 @@ export default {
 
   data() {
     return {
-      question: '',
       roomCreatorName: '',
       showBadge: false,
       socket: new VueSocketIO({
@@ -46,13 +46,21 @@ export default {
     }
   },
 
-  watch: {
-    question() {
-      console.log(this.question);
-    }
+  computed: {
+    ...mapState({
+      appName(state) {
+        return state.appName
+      },
+      question: state => state.question
+    })
   },
 
   methods: {
+    ...mapActions(['SET_QUESTION']),
+    
+    updateQuestion(event) {
+      this.SET_QUESTION(event);
+    },
     async startGame() {
       console.log(this.socket.io.id);
     },
@@ -72,7 +80,7 @@ export default {
     }
   },
   mounted() {
-
+    console.log(this.appName);
   }
 }
 </script>
