@@ -4,7 +4,7 @@
         <input 
             :style="{ width: widthValue + 'px' }" 
             :value="modelValue" 
-            @input="$emit('update:modelValue', $event.target.value)"
+            @input="$emit('vueinput', $event.target.value)"
             :placeholder="placeholderValue" />
     </div>
 </template>
