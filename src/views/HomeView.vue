@@ -1,5 +1,11 @@
-<script setup>
+<script>
 import Homepage from '@/components/Homepage.vue'
+
+export default {
+  components: {
+    Homepage
+  }
+}
 </script>
 
 <template>

@@ -28,8 +28,7 @@ import IconPlay from './icons/IconPlay.vue';
 import IconLinkChain from './icons/IconLinkChain.vue'
 import io from 'socket.io-client';
 import VueSocketIO from 'vue-socket.io'
-import { mapState, mapGetters, mapActions } from 'vuex'
-import { advancePositionWithMutation } from '@vue/compiler-core';
+import { mapState, mapActions } from 'vuex'
 import { state } from '../store/state';
 
 export default {
@@ -44,10 +43,6 @@ export default {
     return {
       roomCreatorName: '',
       showBadge: false,
-      socket: new VueSocketIO({
-        debug: true,
-        connection: 'http://localhost:3000'
-      }),
       playerName: '',
       errors: [false, false]
     }
@@ -78,6 +73,10 @@ export default {
     }
   },
 
+  beforeUnmount(){
+    console.log('Unmounted!');
+  },  
+
   methods: {
     ...mapActions(['SET_QUESTION', 'SET_PLAYER']),
 
@@ -104,10 +103,10 @@ export default {
 
     async startGame() {
       if (this.formValidated) {
-        console.log(this.socket.io.id);
 
         this.setPlayer(this.playerName);
         console.log('name: ', this.players[0].name);
+        this.$router.push('/waiting');
       }
     },
 
