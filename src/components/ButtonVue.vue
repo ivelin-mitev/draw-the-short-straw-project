@@ -55,7 +55,7 @@ div {
     transform: scale(0);
   }
   50% {
-    transform: scale(1.06, 0.7);
+    transform: scale(1.06, 0.4);
   }
   100% {
     transform: scale(1);

@@ -4,5 +4,8 @@ export const mutations = {
     },
     SET_QUESTION(state, data) {
         state.question = data;
+    },
+    SET_PLAYER(state, data) {
+        state.players.push(data);
     }
 }

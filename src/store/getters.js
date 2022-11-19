@@ -10,5 +10,8 @@ export const getters = {
     },
     question(state){
         return state.question
+    },
+    players(state){
+        return state.players
     }
 }
