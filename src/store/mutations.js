@@ -7,5 +7,8 @@ export const mutations = {
     },
     SET_PLAYER(state, data) {
         state.players.push(data);
+    },
+    SET_URL(state, data) {
+        state.url = data
     }
 }

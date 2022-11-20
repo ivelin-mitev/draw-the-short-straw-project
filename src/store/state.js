@@ -3,5 +3,6 @@ export const state = {
     question: '',
     players: [],
     // Player: { name: 'Ivo', role: 'admin/regular/spectator', currentPlayer: true/false, playerId: 1/2/3}
-    something: undefined
+    something: undefined,
+    url: ''
 }

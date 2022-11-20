@@ -7,5 +7,8 @@ export const actions = {
     },
     SET_PLAYER({ commit }, payload) {
         commit('SET_PLAYER', payload)
+    },
+    SET_URL({ commit }, payload) {
+        commit('SET_URL', payload)
     }
 }
