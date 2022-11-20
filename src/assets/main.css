@@ -128,6 +128,24 @@ a,
   padding: 5px;
 }
 
+.nameTiles {
+  display: flex;
+  gap: 6px;
+
+  margin-bottom: 32px;
+}
+
+.nameTile {
+  background-color: whitesmoke;
+  color: var(--my-grey-dark);
+
+  font-size: 24px;
+  font-weight: 600;
+
+  border-radius: 2px;
+  padding: 0px 38px;
+}
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
