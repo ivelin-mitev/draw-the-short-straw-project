@@ -122,8 +122,7 @@ export default {
       if (this.formValidated) {
         this.setPlayer(this.playerName);
         this.$socket.client.emit('initialize_waiting_room', {
-          ...this.players[0],
-          roomId: this.roomId
+          name: this.playerName
         });
         this.SET_URL(window.location.href);
         this.$router.push(`/waiting/?roomId=${this.roomId}`);
@@ -149,6 +148,7 @@ export default {
   mounted() {
     if (this.$route.query.roomId) {
       this.$socket.client.emit('invitedPlayerLoading', this.$route.query.roomId);
+      this.$router.push(`/waiting/?roomId=${this.$route.query.roomId}`);
     } else {
       this.$socket.client.emit('initialPlayer', this.$route.query.roomId);
     }
