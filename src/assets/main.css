@@ -31,7 +31,11 @@ input {
 
 input:focus {
   outline: 2px solid var(--my-grey-dark);
-  }
+}
+
+.title {
+  text-align: center;
+}
 
 .logo {
   height: 200px;

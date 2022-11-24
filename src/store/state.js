@@ -4,5 +4,7 @@ export const state = {
     players: [],
     // Player: { name: 'Ivo', role: 'admin/regular/spectator', currentPlayer: true/false, playerId: 1/2/3}
     something: undefined,
-    url: ''
+    url: '',
+    playerNameEmitted: false,
+    gameData: undefined
 }

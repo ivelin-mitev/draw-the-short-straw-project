@@ -94,7 +94,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(['SET_QUESTION', 'SET_PLAYER', 'SET_URL']),
+    ...mapActions(['SET_QUESTION', 'SET_PLAYER', 'SET_URL', 'SET_PLAYERNAMEEMITTED']),
 
     setQuestion(value) {
       this.SET_QUESTION(value);
@@ -125,6 +125,7 @@ export default {
           name: this.playerName
         });
         this.SET_URL(window.location.href);
+        this.SET_PLAYERNAMEEMITTED(true);
         this.$router.push(`/waiting/?roomId=${this.roomId}`);
       }
     },

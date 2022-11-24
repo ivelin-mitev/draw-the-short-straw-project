@@ -21,14 +21,25 @@ let game = {};
 
 io.on("connection", function (socket) {
 
-  // If a player joins from URL invitation
+  // Invited player
   socket.on("invitedPlayerLoading", function (roomId) {
     const ROOMID = roomId;
+
     socket.emit('playerHasInvitation', true);
     socket.emit('newPlayerId', game[ROOMID].players.length);
+
+    socket.on('playerJoinsWaitingRoom', function (playerName) {
+      game[ROOMID].players.push({
+        id: socket.id.substr(0,6),
+        name: playerName,
+        strawId: null
+      })      
+    
+    io.emit('gameInfo', game[ROOMID]);
+    })
   })
 
-  // If a player doesn't have invitation URL
+  // initial player
   socket.on("initialPlayer", function () {
     socket.emit('playerHasInvitation', false);
     // On connection a room ID is created
@@ -44,7 +55,11 @@ io.on("connection", function (socket) {
     // players, roles of players, question, winner.
     socket.on("initialize_waiting_room", function (data) {
       game[currentRoomId] = {
-        players: [{[currentRoomId]: data.name}],
+        players: [{
+          id: currentRoomId,
+          name: data.name,
+          strawId: null
+        }],
         phase: 'waiting',
         winner: undefined,
         strawsDrown: 0

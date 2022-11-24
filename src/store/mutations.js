@@ -10,5 +10,11 @@ export const mutations = {
     },
     SET_URL(state, data) {
         state.url = data
+    },
+    SET_PLAYERNAMEEMITTED(state, data) {
+        state.playerNameEmitted = data;
+    },
+    SET_GAMEDATA(state, data) {
+        state.gameData = data
     }
 }
