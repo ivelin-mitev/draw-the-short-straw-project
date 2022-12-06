@@ -49,5 +49,9 @@ header {
     display: flex;
     gap:50px;
     bottom: 0%;
+    max-height: 60%;
+}
+.straw{
+    width: 50px;
 }
 </style>

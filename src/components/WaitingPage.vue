@@ -104,7 +104,7 @@ export default {
         },
         startDrawing() {
             if(this.roomId){
-                this.$router.push(`/draw/${this.roomId}`);
+                this.$router.push(`/draw/?roomId=${this.roomId}`);
                 return
             }
             alert('Not enought players')

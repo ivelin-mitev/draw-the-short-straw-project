@@ -1,9 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import WaitView from "../views/WaitView.vue";
+import DrawView from "../views/DrawView.vue";
 import VueSocketIO from "vue-socket.io";
-
-
 
 // let socket = new VueSocketIO({
 //   debug: true,
@@ -24,6 +23,11 @@ const router = createRouter({
       name: "waitingpage",
       component: WaitView,
     },
+    {
+      path: "/draw",
+      name: "draw",
+      component: DrawView
+    }
   ],
 });
 
